@@ -27,7 +27,7 @@ task("accounts", "Prints the list of accounts")
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  defaultNetwork: "localhost",
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {
     },
@@ -36,25 +36,29 @@ module.exports = {
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
-      accounts: process.env.Accounts_PRIVATE_KEY,
+      accounts: [`0x${process.env.Account_PRIVATE_KEY}`],
       gas: process.env.Network_Gas,
       gasPrice: process.env.Network_Gas_Price
     },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
-      accounts: process.env.Accounts_PRIVATE_KEY,
+      accounts: [`0x${process.env.Account_PRIVATE_KEY}`],
       gas: process.env.Network_Gas,
       gasPrice: process.env.Network_Gas_Price
     },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
-      accounts: process.env.Accounts_PRIVATE_KEY,
+      accounts: [`0x${process.env.Account_PRIVATE_KEY}`],
       gas: process.env.Network_Gas,
       gasPrice: process.env.Network_Gas_Price
     },
   },
   solidity: {
-    version: "0.8.4",
+    compilers: [
+      {
+        version: "0.8.4"
+      }
+    ],
     settings: {
       optimizer: {
         enabled: true,
