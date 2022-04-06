@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-web3");
+require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -52,6 +53,9 @@ module.exports = {
       gas: process.env.Network_Gas,
       gasPrice: process.env.Network_Gas_Price
     },
+  },
+  etherscan: {
+    apikey: ""
   },
   solidity: {
     compilers: [
