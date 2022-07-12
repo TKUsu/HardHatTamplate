@@ -53,6 +53,19 @@ module.exports = {
       gas: process.env.Network_Gas,
       gasPrice: process.env.Network_Gas_Price
     },
+    thunder: {
+      url: `https://mainnet-rpc.thundercore.com`,
+      accounts: [`0x${process.env.Account_PRIVATE_KEY}`],
+      gas: process.env.Network_Gas,
+      gasPrice: process.env.Network_Gas_Price
+    },
+    venus: {
+      url: `https://venus-rpc.thundercore.com`,
+      // chainId: 18,
+      accounts: [`0x${process.env.Account_PRIVATE_KEY}`],
+      gas: 100000000,
+      gasPrice: 1000000000
+    },
   },
   etherscan: {
     apikey: ""
